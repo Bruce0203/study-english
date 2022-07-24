@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>SHTU</title>
+        <template class="card">
+            <article>
+                <h1 class="word"></h1>
+                <h1 class="mean"></h1>
+            </article>
+        </template>
+        <body id="page-contents">
+        <div>
+            <header>
+                <h1 style="text-align: left">내가 외우려고 보기 좋게 만들어봄</h1>
+            </header>
+        </div>
+        <div class="contents">
+        </div>
+        </body>
+        <style>
+            header {
+                padding-top: 8%;
+                padding-bottom: 4%
+            }
+            #page-contents {
+                padding-left: 20%;
+                padding-right: 20%;
+            }
+            article {
+                padding-left: 15%;
+                padding-right: 15%;
+                padding-bottom: 36%;
+                border-left: 7px solid black;
+            }
+            article * {
+                display: inline-grid;
+            }
+            article h1, h2, h3 {
+                padding: 0;
+                margin: 0;
+                line-height: 100%;
+                padding-top: 36%;
+            }
+            .mean {
+                float: right;
+            }
+        </style>
+        <script>
+            const array = [
+                { word: "abnormal", mean: "비정상의" },
+                { word: "advice", mean: "조언하다, 충고하다" },
+                { word: "arrival", mean: "도착" },
+                { word: "beard", mean: "턱수염" },
+                { word: "bunch", mean: "다발" },
+                { word: "cite", mean: "인용하다" },
+                { word: "confusing", mean: "혼란시키는" },
+                { word: "credible", mean: "신뢰할 수 있는" },
+                { word: "democratic", mean: "민주적인" },
+                { word: "discount", mean: "할인, 할인하다" },
+                { word: "dump", mean: "버리다" },
+                { word: "entertainment", mean: "환대, 오락, 연회" },
+                { word: "extend", mean: "뻗다, 넓히다" },
+                { word: "hallway", mean: "현관, 복도" },
+                { word: "inequality", mean: "같지 않음, 불평등" },
+                { word: "ironical", mean: "반어적인, 역설적인" },
+                { word: "magnet", mean: "자석" },
+                { word: "misunderstand", mean: "오해하다" },
+                { word: "normal", mean: "정상의" },
+                { word: "ozone", mean: "오존" },
+                { word: "posture", mean: "자세" },
+                { word: "protection", mean: "보호" },
+                { word: "remarkable", mean: "현저한, 주목할 만한" },
+                { word: "saw", mean: "톱, 톱질하다" },
+                { word: "sociology", mean: "사회학" },
+                { word: "steam", mean: "증기" },
+                { word: "survival", mean: "생존" },
+                { word: "timetable", mean: "시간표" },
+                { word: "undertake", mean: "떠맡다" },
+            ]
+
+            let card = document.querySelector(".card")
+            contents = document.querySelector(".contents");
+            array.forEach(e => {
+                console.log(e)
+                card.content.querySelector(".word").textContent = e.word
+                card.content.querySelector(".mean").textContent = e.mean
+                let clone = card.content.cloneNode(true)
+                contents.appendChild(clone);
+            })
+        </script>
+    </head>
+</html>
